@@ -246,6 +246,130 @@
   color: #D8B4FE;
 }
 
+/* ---------- 感谢名单卡片 ---------- */
+.credit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin-top: 48px;
+}
+
+/* Accent 通道值：由卡片内联 --accent 推导，用于边框/背景/图标的任意透明度 */
+.credit-card { --accent-rgb: 125 59 237; --icon-fg: #C084FC; }
+.credit-card[style*="#7D3BED"] { --accent-rgb: 125 59 237; --icon-fg: #C084FC; }
+.credit-card[style*="#4A87E8"] { --accent-rgb: 74 135 232;  --icon-fg: #93C5FD; }
+.credit-card[style*="#22D3EE"] { --accent-rgb: 34 211 238;  --icon-fg: #67E8F9; }
+.credit-card[style*="#F29E29"] { --accent-rgb: 242 158 41;  --icon-fg: #FDE68A; }
+.credit-card[style*="#4DD980"] { --accent-rgb: 77 217 128;  --icon-fg: #86EFAC; }
+.credit-card[style*="#D9F75A"] { --accent-rgb: 217 247 90;  --icon-fg: #D9F75A; }
+
+.credit-card {
+  padding: 28px;
+  border-radius: 20px;
+  background: var(--glass-1);
+  border: 1px solid rgb(var(--accent-rgb) / 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 32px rgb(var(--accent-rgb) / 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.credit-card:hover {
+  transform: translateY(-4px);
+  border-color: rgb(var(--accent-rgb) / 0.45);
+  box-shadow: 0 18px 40px rgb(var(--accent-rgb) / 0.14);
+}
+
+.credit-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.credit-icon {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: rgb(var(--accent-rgb) / 0.14);
+  color: var(--icon-fg);
+  display: grid;
+  place-items: center;
+}
+
+.credit-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.credit-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-1);
+  line-height: 24px;
+}
+
+.credit-role {
+  font-size: 13px;
+  color: var(--text-5);
+  line-height: 18px;
+}
+
+.credit-tag {
+  margin-left: auto;
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgb(var(--accent-rgb) / 0.14);
+  color: var(--icon-fg);
+  white-space: nowrap;
+}
+
+.credit-desc {
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--text-3);
+  flex: 1;
+}
+
+.credit-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 13px;
+  color: var(--text-4);
+  transition: color 0.2s ease;
+}
+
+a.credit-link:hover { color: var(--icon-fg); }
+
+.credit-link .ico {
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  opacity: 0.7;
+}
+
+a.credit-link:hover .ico { opacity: 1; }
+
+/* 无外链时的静态说明行 */
+.credit-link.is-static {
+  color: var(--text-6);
+  cursor: default;
+}
+
 /* ---------- 提示框 ---------- */
 .notice {
   display: flex;
@@ -262,9 +386,19 @@
 .notice-title { font-size: 15px; font-weight: 700; color: #FDE68A; }
 .notice-text { font-size: 14px; line-height: 22px; color: var(--text-3); }
 
+.notice-text a {
+  color: #FDE68A;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.notice-text a:hover { color: #fff; }
+
 /* ---------- 响应式 ---------- */
 @media (max-width: 1024px) {
   .dl-grid { grid-template-columns: 1fr; }
+  .credit-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 900px) {
@@ -275,4 +409,6 @@
   .req-table td:first-child { width: auto; }
   .step { padding: 20px; }
   .notice { padding: 20px; }
+  .credit-grid { margin-top: 36px; gap: 16px; }
+  .credit-card { padding: 24px; }
 }
