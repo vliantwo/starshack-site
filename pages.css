@@ -1,0 +1,278 @@
+/* ============================================================
+   StarShack 二级页面共用组件 — pages.css
+   依赖 styles.css 的 design token，不重复定义颜色/字体/圆角
+   ============================================================ */
+
+/* ---------- 导航：当前页高亮 ---------- */
+.nav-links a.is-active { color: #fff; }
+.nav-links a.is-active::after { opacity: 1; transform: scaleX(1); }
+
+/* ---------- 二级页 Hero ---------- */
+.page-hero {
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding: 72px var(--gutter) 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 顶部光晕：沿用首页 Hero 的双层霓虹手法 */
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 760px;
+  height: 380px;
+  background: radial-gradient(ellipse at center,
+      rgba(125, 59, 237, 0.22), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-hero > * { position: relative; z-index: 1; }
+
+/* ---------- 面包屑 ---------- */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-5);
+}
+
+.breadcrumb a { color: var(--text-4); transition: color 0.2s; }
+.breadcrumb a:hover { color: #fff; }
+.breadcrumb .sep { color: var(--text-6); }
+.breadcrumb .current { color: var(--text-3); }
+
+/* ---------- 页面标题组 ---------- */
+.page-title {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 60px rgba(125, 59, 237, 0.25),
+    0 0 30px rgba(125, 59, 237, 0.2);
+}
+
+.page-subtitle {
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-4);
+  max-width: 640px;
+}
+
+/* ---------- 系统要求表 ---------- */
+.req-table-wrap {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--glass-1);
+  border: 1px solid rgba(125, 59, 237, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.req-table { width: 100%; border-collapse: collapse; }
+
+.req-table th,
+.req-table td {
+  padding: 18px 28px;
+  text-align: left;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.req-table th {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-4);
+  background: rgba(255, 255, 255, 0.03);
+  letter-spacing: 0.02em;
+}
+
+.req-table td:first-child {
+  color: var(--text-2);
+  font-weight: 500;
+  width: 190px;
+}
+
+.req-table td:last-child { color: var(--text-3); }
+.req-table tr:last-child td { border-bottom: none; }
+.req-table .em { color: #FCA5A5; font-weight: 600; }
+
+/* ---------- 下载卡片 ---------- */
+.dl-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.dl-card {
+  padding: 32px;
+  border-radius: 20px;
+  background: var(--glass-1);
+  border: 1px solid rgba(125, 59, 237, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.dl-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(125, 59, 237, 0.45);
+}
+
+.dl-card.is-primary {
+  background: linear-gradient(135deg,
+      rgba(125, 59, 237, 0.12), rgba(74, 135, 232, 0.08));
+  border-color: rgba(125, 59, 237, 0.4);
+}
+
+.dl-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dl-card-icon {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(125, 59, 237, 0.15);
+  display: grid;
+  place-items: center;
+  color: #C084FC;
+}
+
+.dl-card-title { font-size: 20px; font-weight: 700; color: #fff; }
+
+.dl-card-tag {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(77, 217, 128, 0.15);
+  color: #4ADE80;
+}
+
+.dl-card-desc {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--text-3);
+  flex: 1;
+}
+
+.dl-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dl-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.dl-meta-row span:first-child { color: var(--text-5); }
+.dl-meta-row span:last-child {
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 安装步骤 ---------- */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: var(--glass-2);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.step:hover {
+  border-color: rgba(125, 59, 237, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.step-num {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7D3BED, #9959F7);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 14px rgba(125, 59, 237, 0.4);
+}
+
+.step-body { display: flex; flex-direction: column; gap: 6px; }
+.step-title { font-size: 16px; font-weight: 600; color: #fff; }
+.step-desc { font-size: 14px; line-height: 22px; color: var(--text-3); }
+
+.step-desc code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 13px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(125, 59, 237, 0.16);
+  color: #D8B4FE;
+}
+
+/* ---------- 提示框 ---------- */
+.notice {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: rgba(242, 158, 41, 0.07);
+  border: 1px solid rgba(242, 158, 41, 0.28);
+}
+
+.notice-icon { flex: 0 0 auto; color: #FBBF24; margin-top: 2px; }
+.notice-body { display: flex; flex-direction: column; gap: 8px; }
+.notice-title { font-size: 15px; font-weight: 700; color: #FDE68A; }
+.notice-text { font-size: 14px; line-height: 22px; color: var(--text-3); }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1024px) {
+  .dl-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .page-hero { padding: 48px var(--gutter) 40px; }
+  .page-title { font-size: 34px; }
+  .req-table th,
+  .req-table td { padding: 14px 18px; }
+  .req-table td:first-child { width: auto; }
+  .step { padding: 20px; }
+  .notice { padding: 20px; }
+}
