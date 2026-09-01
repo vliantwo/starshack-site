@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>感谢名单 — StarShack</title>
+<meta name="description" content="StarShack 的感谢名单：Novoline-bS、Raven-bS、LiquidBounce、Minecraft Forge、SpongePowered Mixin 与 KOOK 社区。GPLv3 开源，保留全部原始版权声明。" />
+<link rel="icon" type="image/png" href="assets/hero-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="pages.css" />
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <a class="logo-area" href="index.html" aria-label="StarShack 首页">
+    <span class="logo-icon"></span>
+    <span class="logo-text">StarShack</span>
+  </a>
+
+  <nav class="nav-links">
+    <a href="index.html#features">功能特性</a>
+    <a href="index.html#modules">模块详情</a>
+    <a href="index.html#community">开源社区</a>
+    <a href="download.html">下载</a>
+    <a href="credits.html" class="is-active">感谢名单</a>
+  </nav>
+
+  <a class="header-cta" href="https://github.com/vliantwo/Starshack" target="_blank" rel="noopener">GitHub</a>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="index.html">首页</a>
+    <span class="sep">/</span>
+    <span class="current">感谢名单</span>
+  </nav>
+
+  <h1 class="page-title">感谢名单</h1>
+
+  <p class="page-subtitle">
+    StarShack 站在这些开源项目与社区的肩膀上。它们的架构、概念与工具，构成了这个客户端的基石。
+  </p>
+
+  <div class="badge">
+    <span class="badge-dot"></span>
+    <span class="badge-text">GPLv3 · 保留全部原始版权声明</span>
+  </div>
+</section>
+
+<!-- ============ 上游血脉 ============ -->
+<section class="section" id="upstream">
+  <div class="section-header">
+    <h2 class="section-title">上游血脉</h2>
+    <p class="section-subtitle">StarShack 由此衍生的项目谱系</p>
+  </div>
+
+  <div class="credit-grid">
+    <!-- Novoline-bS -->
+    <article class="credit-card reveal" style="--accent:#7D3BED;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="6" cy="5" r="2.4" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="18" cy="5" r="2.4" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="12" cy="19" r="2.4" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M6 7.4v2.2a2.4 2.4 0 002.4 2.4h7.2A2.4 2.4 0 0018 9.6V7.4M12 12v4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">Novoline-bS</span>
+          <span class="credit-role">Ij1chi-Nijika</span>
+        </div>
+        <span class="credit-tag">直接基底</span>
+      </div>
+
+      <p class="credit-desc">
+        本项目 fork 的直接来源。模块与设置架构、ClickGUI 以及大量 Mixin 工作都源自于此，是 StarShack 最核心的代码基础。
+      </p>
+
+      <a class="credit-link" href="https://github.com/Ij1chi-Nijika/Novoline-bS" target="_blank" rel="noopener">
+        <span>github.com/Ij1chi-Nijika/Novoline-bS</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 17L17 7m0 0H9m8 0v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </article>
+
+    <!-- Raven-bS -->
+    <article class="credit-card reveal" style="--accent:#4A87E8;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 4v9a4 4 0 004 4h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 4h6a4 4 0 014 4v1a4 4 0 01-4 4H4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="17" cy="17" r="3.2" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">Raven-bS / Raven-XD</span>
+          <span class="credit-role">开源社区</span>
+        </div>
+        <span class="credit-tag">概念源头</span>
+      </div>
+
+      <p class="credit-desc">
+        最初的「Raven」血脉，Novoline-bS 本身也是它的延伸。ESP、Aura、Scaffold 等核心模块概念，最早都可以溯源到这个社区。
+      </p>
+
+      <span class="credit-link is-static">
+        <span>社区项目 · 无官方仓库链接</span>
+      </span>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 灵感与技术基石 ============ -->
+<section class="section" id="foundation">
+  <div class="section-header">
+    <h2 class="section-title">灵感与技术基石</h2>
+    <p class="section-subtitle">为 StarShack 提供设计灵感与运行支撑的项目</p>
+  </div>
+
+  <div class="credit-grid">
+    <!-- LiquidBounce -->
+    <article class="credit-card reveal" style="--accent:#22D3EE;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 18h6m-5 3h4M12 3a6 6 0 00-3.6 10.8c.6.5.9 1.1 1 1.7l.1.5h5l.1-.5c.1-.6.4-1.2 1-1.7A6 6 0 0012 3z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">LiquidBounce</span>
+          <span class="credit-role">CCBlueX</span>
+        </div>
+        <span class="credit-tag">设计灵感</span>
+      </div>
+
+      <p class="credit-desc">
+        为 StarShack 的模块架构整洁度与脚本化设计提供了重要参考。其清晰的抽象分层是本项目重构时的样板。
+      </p>
+
+      <a class="credit-link" href="https://github.com/CCBlueX/LiquidBounce" target="_blank" rel="noopener">
+        <span>github.com/CCBlueX/LiquidBounce</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 17L17 7m0 0H9m8 0v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </article>
+
+    <!-- Forge -->
+    <article class="credit-card reveal" style="--accent:#F29E29;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2.6l8.4 4.8v9.2L12 21.4 3.6 16.6V7.4L12 2.6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M12 12l8.4-4.6M12 12v9.4M12 12L3.6 7.4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">Minecraft Forge / ForgeGradle</span>
+          <span class="credit-role">Forge 团队</span>
+        </div>
+        <span class="credit-tag">运行框架</span>
+      </div>
+
+      <p class="credit-desc">
+        StarShack 所依赖的模组框架与构建工具链。没有 Forge 的加载机制与 ForgeGradle 的构建体系，这个客户端无从运行。
+      </p>
+
+      <a class="credit-link" href="https://files.minecraftforge.net/net/minecraftforge/forge/index_1.8.9.html" target="_blank" rel="noopener">
+        <span>Forge 1.8.9 下载</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 17L17 7m0 0H9m8 0v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </article>
+
+    <!-- Mixin -->
+    <article class="credit-card reveal" style="--accent:#4DD980;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M8.5 8.5L3.5 12l5 3.5M15.5 8.5l5 3.5-5 3.5M13.5 5l-3 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">SpongePowered Mixin</span>
+          <span class="credit-role">SpongePowered</span>
+        </div>
+        <span class="credit-tag">字节码注入</span>
+      </div>
+
+      <p class="credit-desc">
+        用于运行时补丁的字节码转换库。StarShack 对 Minecraft 原版行为的修改，全部通过 Mixin 完成，避免直接改动游戏源码。
+      </p>
+
+      <a class="credit-link" href="https://github.com/SpongePowered/Mixin" target="_blank" rel="noopener">
+        <span>github.com/SpongePowered/Mixin</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 17L17 7m0 0H9m8 0v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </article>
+
+    <!-- KOOK 社区 -->
+    <article class="credit-card reveal" style="--accent:#D9F75A;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20.5 11.5c0 4-3.8 7.2-8.5 7.2-.9 0-1.8-.1-2.6-.3L4.5 20.5l1.4-3.4A6.9 6.9 0 013.5 11.5C3.5 7.5 7.3 4.3 12 4.3s8.5 3.2 8.5 7.2z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">KOOK 社区</span>
+          <span class="credit-role">每一位测试与反馈者</span>
+        </div>
+        <span class="credit-tag">同行者</span>
+      </div>
+
+      <p class="credit-desc">
+        模块建议、Bug 反馈、兼容性测试与日常讨论都来自这里。StarShack 的每一次迭代，都有社区成员的直接参与。
+      </p>
+
+      <a class="credit-link" href="https://kook.vip/v1yDjC" target="_blank" rel="noopener">
+        <span>加入 KOOK 服务器</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 17L17 7m0 0H9m8 0v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 许可与署名 ============ -->
+<section class="section" id="license">
+  <div class="notice reveal">
+    <span class="notice-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 3l8 3.5v5c0 5-3.4 9-8 10.5-4.6-1.5-8-5.5-8-10.5v-5L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M9 12l2.2 2.2L15.5 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <div class="notice-body">
+      <span class="notice-title">关于许可与署名</span>
+      <p class="notice-text">
+        StarShack 继承其上游项目的 <strong>GPLv3</strong> 许可，并<strong>保留全部适用的版权声明</strong>。任何分发（包括预编译 jar）都必须同样以 GPLv3 发布并提供完整源码。
+        如果你认为本页遗漏了任何应得的署名，请
+        <a href="https://github.com/vliantwo/Starshack/issues" target="_blank" rel="noopener">提交 Issue</a>，我们会尽快补正。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="brand-column">
+      <div class="footer-logo-area">
+        <span class="footer-logo-icon"></span>
+        <span class="footer-logo-text">StarShack</span>
+      </div>
+      <p class="footer-tagline">Privacy-First. Configuration-Persistent. Yours to Extend.</p>
+    </div>
+
+    <div class="links-columns">
+      <div class="link-col">
+        <span class="link-col-title">产品</span>
+        <a href="index.html#features">功能特性</a>
+        <a href="index.html#modules">模块详情</a>
+        <a href="download.html">下载</a>
+      </div>
+      <div class="link-col">
+        <span class="link-col-title">社区</span>
+        <a href="https://github.com/vliantwo/Starshack" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://kook.vip/v1yDjC" target="_blank" rel="noopener">KOOK</a>
+        <a href="https://github.com/vliantwo/Starshack/issues" target="_blank" rel="noopener">Issue 反馈</a>
+      </div>
+      <div class="link-col">
+        <span class="link-col-title">法律</span>
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GPLv3 协议</a>
+        <a href="credits.html">感谢名单</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>Copyright 2026 StarShack.</span>
+    <span>Made with passion for the Minecraft community.</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
