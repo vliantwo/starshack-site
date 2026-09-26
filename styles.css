@@ -192,6 +192,9 @@ body { overflow-x: hidden; }
 .nav-links a:hover { color: #fff; }
 .nav-links a:hover::after { opacity: 1; transform: scaleX(1); }
 
+/* 移动端导航开关：桌面端始终隐藏，仅在 860 断点启用 */
+.nav-toggle { display: none; }
+
 /* Header CTA (3:10  padding 10/24, r=8) */
 .header-cta {
   display: inline-flex;
@@ -749,7 +752,93 @@ a.community-card:hover .community-cta { color: rgb(var(--accent-rgb)); }
 
 @media (max-width: 860px) {
   :root { --gutter: 24px; }
-  .nav-links { display: none; }
+
+  /* 汉堡按钮 */
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .nav-toggle:hover,
+  .nav-toggle:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(125, 59, 237, 0.5);
+  }
+
+  .nav-toggle-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background: var(--text-2);
+    transition: transform 0.22s ease, opacity 0.22s ease;
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* 展开后的下拉面板（复用桌面同一份导航 DOM） */
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: var(--gutter);
+    right: var(--gutter);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 8px;
+    border-radius: 16px;
+    background: rgba(11, 11, 18, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.55);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  }
+
+  .nav-links.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    padding: 13px 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  /* 竖排时去掉下划线动画，改为整行高亮 */
+  .nav-links a::after { display: none; }
+  .nav-links a:hover,
+  .nav-links a:active { background: rgba(255, 255, 255, 0.06); color: #fff; }
+
   .features-grid { grid-template-columns: minmax(0, 1fr); }
   .community-cards { grid-template-columns: minmax(0, 1fr); }
   .module-card { flex: 1 1 100%; }
