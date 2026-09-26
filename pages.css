@@ -341,6 +341,16 @@
   flex: 1;
 }
 
+/* 卡片正文里的行内代码（隐私政策页用到） */
+.credit-desc code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 13px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-1);
+}
+
 .credit-link {
   display: flex;
   align-items: center;
