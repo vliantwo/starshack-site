@@ -59,4 +59,49 @@
   }, { passive: true });
 
   syncNav();
+
+  /* 3. 移动端导航菜单（860px 以下启用） */
+  var navToggle = document.querySelector('.nav-toggle');
+  var siteNav = document.getElementById('site-nav');
+
+  if (navToggle && siteNav) {
+    function setMenu(open) {
+      siteNav.classList.toggle('is-open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? '关闭导航菜单' : '打开导航菜单');
+    }
+
+    function isMenuOpen() {
+      return navToggle.getAttribute('aria-expanded') === 'true';
+    }
+
+    navToggle.addEventListener('click', function () {
+      setMenu(!isMenuOpen());
+    });
+
+    // 点击导航项后收起（锚点跳转 / 页面跳转都适用）
+    siteNav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setMenu(false);
+    });
+
+    // Esc 关闭并把焦点还给按钮
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isMenuOpen()) {
+        setMenu(false);
+        navToggle.focus();
+      }
+    });
+
+    // 点击面板与按钮之外的地方关闭
+    document.addEventListener('click', function (e) {
+      if (!isMenuOpen()) return;
+      if (navToggle.contains(e.target) || siteNav.contains(e.target)) return;
+      setMenu(false);
+    });
+
+    // 视口放大回桌面布局时复位，避免残留展开态
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 860 && isMenuOpen()) setMenu(false);
+    });
+  }
 })();
