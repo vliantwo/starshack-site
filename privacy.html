@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>隐私政策 — StarShack</title>
+<meta name="description" content="StarShack 隐私政策：客户端无遥测、无分析、不收集账号信息，配置全部保存在本机。列出全部会发起网络请求的场景，包括脚本加载时发送硬件 ID 的说明。" />
+<link rel="icon" type="image/png" href="assets/hero-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="pages.css" />
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <a class="logo-area" href="index.html" aria-label="StarShack 首页">
+    <span class="logo-icon"></span>
+    <span class="logo-text">StarShack</span>
+  </a>
+
+  <nav class="nav-links" id="site-nav">
+    <a href="index.html#features">功能特性</a>
+    <a href="index.html#modules">模块详情</a>
+    <a href="index.html#community">开源社区</a>
+    <a href="download.html">下载</a>
+    <a href="credits.html">感谢名单</a>
+  </nav>
+
+  <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="site-nav">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+
+  <a class="header-cta" href="https://github.com/vliantwo/Starshack" target="_blank" rel="noopener">GitHub</a>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="index.html">首页</a>
+    <span class="sep">/</span>
+    <span class="current">隐私政策</span>
+  </nav>
+
+  <h1 class="page-title">隐私政策</h1>
+
+  <p class="page-subtitle">
+    StarShack 不收集、不上传、不出售你的任何数据。以下是完整说明，包括全部会发起网络请求的场景。
+  </p>
+
+  <div class="badge">
+    <span class="badge-dot"></span>
+    <span class="badge-text">最后更新：2026-09-27 · 适用版本 v1.1.4</span>
+  </div>
+</section>
+
+<!-- ============ 总览 ============ -->
+<section class="section" id="overview">
+  <div class="section-header">
+    <h2 class="section-title">我们收集什么</h2>
+    <p class="section-subtitle">一句话：什么也不收集</p>
+  </div>
+
+  <div class="credit-grid">
+    <article class="credit-card reveal" style="--accent:#4DD980;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M9 12l2.2 2.2L15.5 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">遥测与分析</span>
+          <span class="credit-role">无使用统计 · 无崩溃上报</span>
+        </div>
+        <span class="credit-tag">从不</span>
+      </div>
+
+      <p class="credit-desc">
+        客户端不包含任何遥测、埋点或崩溃上报代码。我们无法知道你何时启动、用了哪些模块、玩了多久。
+      </p>
+    </article>
+
+    <article class="credit-card reveal" style="--accent:#4DD980;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M4.8 20a7.2 7.2 0 0114.4 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">账号与身份信息</span>
+          <span class="credit-role">无注册 · 无登录 · 无账号体系</span>
+        </div>
+        <span class="credit-tag">从不</span>
+      </div>
+
+      <p class="credit-desc">
+        StarShack 没有账号系统，不需要你登录，也不会读取或上传你的 Minecraft 正版账号凭据、会话令牌或密码。
+      </p>
+    </article>
+
+    <article class="credit-card reveal" style="--accent:#22D3EE;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">配置与模块设置</span>
+          <span class="credit-role">仅保存在你自己的电脑上</span>
+        </div>
+        <span class="credit-tag">本地</span>
+      </div>
+
+      <p class="credit-desc">
+        所有模块开关、按键绑定与参数改动都会在变更时自动写入本机配置文件，并在启动时读回。这些内容从不离开你的设备。
+      </p>
+    </article>
+
+    <article class="credit-card reveal" style="--accent:#8C8CA6;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3l8 3.5v5c0 5-3.4 9-8 10.5-4.6-1.5-8-5.5-8-10.5v-5L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">本网站</span>
+          <span class="credit-role">静态页面 · 无统计脚本 · 无 Cookie</span>
+        </div>
+        <span class="credit-tag">静态</span>
+      </div>
+
+      <p class="credit-desc">
+        本站是纯静态页面，不设置 Cookie，不接入访问统计。唯一例外：页面字体由 Google Fonts 提供，加载时你的 IP 会被 Google 看到。
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 会联网的场景 ============ -->
+<section class="section" id="network">
+  <div class="section-header">
+    <h2 class="section-title">什么时候会联网</h2>
+    <p class="section-subtitle">只有下面两种情况，且都由你主动触发</p>
+  </div>
+
+  <div class="credit-grid">
+    <article class="credit-card reveal" style="--accent:#F29E29;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 20h.01M8.5 15.5a5 5 0 117 0M5.5 11.5a9 9 0 0113 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">Hypixel 战绩查询</span>
+          <span class="credit-role">DuelsStats 模块</span>
+        </div>
+        <span class="credit-tag">按需</span>
+      </div>
+
+      <p class="credit-desc">
+        启用该模块并填入自己的 Hypixel API Key 后，客户端会访问 <strong>api.mojang.com</strong>（玩家名转 UUID）
+        与 <strong>api.hypixel.net</strong>（读取战绩）。不使用该模块则完全不发起这些请求。
+      </p>
+
+      <a class="credit-link" href="https://api.hypixel.net/" target="_blank" rel="noopener">
+        <span>Hypixel API</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 17L17 7m0 0H9m8 0v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </article>
+
+    <article class="credit-card reveal" style="--accent:#E84545;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 9v5m0 3h.01M10.3 3.9L2.6 17.4A2 2 0 004.3 20.4h15.4a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">脚本系统（含硬件 ID）</span>
+          <span class="credit-role">加载第三方脚本时会发送</span>
+        </div>
+        <span class="credit-tag">需注意</span>
+      </div>
+
+      <p class="credit-desc">
+        这是本客户端唯一会主动发出设备标识的场景：<strong>加载脚本时，客户端会向脚本所在的服务器发送一个本机硬件 ID</strong>
+        （作为请求头 <code>id</code>）。该 ID 由本机信息派生，用于脚本来源方识别设备。
+        <strong>如果你不希望发生这件事，请不要加载第三方脚本</strong> —— 不使用脚本功能则不会触发。
+      </p>
+
+      <span class="credit-link is-static">
+        <span>行为来源：ScriptManager 加载流程 · NetworkUtils</span>
+      </span>
+    </article>
+
+    <article class="credit-card reveal" style="--accent:#7D3BED;">
+      <div class="credit-card-top">
+        <span class="credit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M8.5 8.5L3.5 12l5 3.5M15.5 8.5l5 3.5-5 3.5M13.5 5l-3 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="credit-heading">
+          <span class="credit-name">脚本内部的网络行为</span>
+          <span class="credit-role">由你运行的脚本决定</span>
+        </div>
+        <span class="credit-tag">自控</span>
+      </div>
+
+      <p class="credit-desc">
+        脚本 API 提供 HTTP 请求、WebSocket 与远程图片加载能力。这些请求由你选择运行的脚本发起，目标地址取决于脚本内容，
+        <strong>不属于客户端自身行为</strong>。运行来源不明的脚本等同于运行来源不明的程序，请自行判断。
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 说明 ============ -->
+<section class="section" id="note">
+  <div class="notice reveal">
+    <span class="notice-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M12 11v5m0-8h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <div class="notice-body">
+      <span class="notice-title">关于本页的范围</span>
+      <p class="notice-text">
+        本页只描述 <strong>StarShack 客户端与本站</strong>的行为，不涵盖你连接的第三方服务器、Hypixel 或任何脚本来源方的隐私做法。
+        客户端以 <strong>GPLv3</strong> 开源，上述每一条都可以在源码中核对。若发现本页描述与实际行为不符，请
+        <a href="https://github.com/vliantwo/Starshack/issues" target="_blank" rel="noopener">提交 Issue</a>，我们会更正。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="brand-column">
+      <div class="footer-logo-area">
+        <span class="footer-logo-icon"></span>
+        <span class="footer-logo-text">StarShack</span>
+      </div>
+      <p class="footer-tagline">Privacy-First. Configuration-Persistent. Yours to Extend.</p>
+    </div>
+
+    <div class="links-columns">
+      <div class="link-col">
+        <span class="link-col-title">产品</span>
+        <a href="index.html#features">功能特性</a>
+        <a href="index.html#modules">模块详情</a>
+        <a href="download.html">下载</a>
+      </div>
+      <div class="link-col">
+        <span class="link-col-title">社区</span>
+        <a href="https://github.com/vliantwo/Starshack" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://kook.vip/v1yDjC" target="_blank" rel="noopener">KOOK</a>
+        <a href="https://github.com/vliantwo/Starshack/issues" target="_blank" rel="noopener">Issue 反馈</a>
+      </div>
+      <div class="link-col">
+        <span class="link-col-title">法律</span>
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GPLv3 协议</a>
+        <a href="credits.html">感谢名单</a>
+        <a href="privacy.html">隐私政策</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>Copyright 2026 StarShack.</span>
+    <span>Made with passion for the Minecraft community.</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
