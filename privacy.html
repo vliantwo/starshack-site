@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>隐私政策 — StarShack</title>
-<meta name="description" content="StarShack 隐私政策：客户端无遥测、无分析、不收集账号信息，配置全部保存在本机。列出全部会发起网络请求的场景，包括脚本加载时发送硬件 ID 的说明。" />
+<meta name="description" content="StarShack 隐私政策：客户端无遥测、无分析、不收集账号信息，配置全部保存在本机。列出全部会发起网络请求的场景，包括加载第三方脚本时附带校验令牌的说明。" />
 <link rel="icon" type="image/png" href="assets/hero-logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -191,20 +191,21 @@
           </svg>
         </span>
         <div class="credit-heading">
-          <span class="credit-name">脚本系统（含硬件 ID）</span>
-          <span class="credit-role">加载第三方脚本时会发送</span>
+          <span class="credit-name">脚本系统（会附带校验令牌）</span>
+          <span class="credit-role">加载第三方脚本时发送</span>
         </div>
-        <span class="credit-tag">需注意</span>
+        <span class="credit-tag">按需</span>
       </div>
 
       <p class="credit-desc">
-        这是本客户端唯一会主动发出设备标识的场景：<strong>加载脚本时，客户端会向脚本所在的服务器发送一个本机硬件 ID</strong>
-        （作为请求头 <code>id</code>）。该 ID 由本机信息派生，用于脚本来源方识别设备。
-        <strong>如果你不希望发生这件事，请不要加载第三方脚本</strong> —— 不使用脚本功能则不会触发。
+        加载第三方脚本时，客户端会在请求头 <code>id</code> 中附带一个<strong>由当前时间窗口派生的滚动令牌</strong>
+        （约每 20 秒变化一次）。经源码核对，该值<strong>不包含</strong>机器名、CPU 型号、核心数等硬件信息，
+        也无法用于跨会话追踪 —— 源码中读取硬件信息的那一步因实现缺陷未生效，实际发送的只是时间派生值。
+        不使用脚本功能则不会触发。请注意：<strong>你访问的任何第三方服务器都会看到你的 IP</strong>，这与使用哪种客户端无关。
       </p>
 
       <span class="credit-link is-static">
-        <span>行为来源：ScriptManager 加载流程 · NetworkUtils</span>
+        <span>源码依据：ScriptManager · NetworkUtils.getTextFromURL · SystemUtils.getHardwareIdForLoad</span>
       </span>
     </article>
 
