@@ -204,6 +204,11 @@
         不使用脚本功能则不会触发。请注意：<strong>你访问的任何第三方服务器都会看到你的 IP</strong>，这与使用哪种客户端无关。
       </p>
 
+      <p class="credit-desc" style="padding-top:12px;border-top:1px solid rgba(255,255,255,.07);">
+        <strong>已修复：</strong>该令牌已在源码中移除，<strong>自下一版本起，加载脚本不再附带任何标识</strong>。
+        当前发布版（v1.1.4 及更早）仍会发送上述时间派生值。
+      </p>
+
       <span class="credit-link is-static">
         <span>源码依据：ScriptManager · NetworkUtils.getTextFromURL · SystemUtils.getHardwareIdForLoad</span>
       </span>
