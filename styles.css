@@ -353,6 +353,12 @@ body { overflow-x: hidden; }
     0 8px 24px rgba(51, 26, 128, 0.3);
 }
 
+.hero-logo picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .hero-logo img {
   width: 100%;
   height: 100%;
