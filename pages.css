@@ -183,6 +183,17 @@
   border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
+/* 主按钮下方的次要入口（全部版本 / 更新日志） */
+.dl-alt-link {
+  margin-top: -4px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-5);
+  transition: color 0.2s ease;
+}
+
+.dl-alt-link:hover { color: var(--text-2); }
+
 .dl-meta-row {
   display: flex;
   justify-content: space-between;
